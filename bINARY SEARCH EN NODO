@@ -1,0 +1,27 @@
+	public Node binarySearch(int ide)
+	{
+		Node temp = head;
+		int max = listSize();
+		int min = 0;
+		int middle = (max+min)/2;
+		while(min != max)
+		{
+			for(int i = min; i < middle-1 ;i++) {
+				temp = temp.next;
+			}
+			if(temp.id == ide)
+			{	
+				return temp;
+			}else if(ide < temp.id)
+			{
+				 temp = head;
+				 max = middle;
+			}else {
+				min = middle;
+			}
+			middle = min + ((max - min)/2);
+			
+		}
+		return temp;
+		
+	}
